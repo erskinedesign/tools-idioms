@@ -7,7 +7,7 @@
     - [Exceptions and slight deviations](#exceptions-and-slight-deviations)
 - [4. Attribute order](#4-attribute-order)
 - [5. Naming](#5-naming)
-- [6. Commenting](#5-commenting)
+- [6. Commenting](#6-commenting)
 - [7. Practical example](#6-practical-example)
 - [License](#license)
 
