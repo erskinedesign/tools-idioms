@@ -64,7 +64,7 @@ A single piece of functionality that can be composed of CSS, mixins, functions a
 
 ### Package
 
-When a module is shared with others via a package manager like Bower it will generally be referred to as a package. This means that the term "module" and "packages" are fairly interchangable.
+When a module is shared with others via a package manager (such as Bower) it will generally be referred to as a package. This means that the term "module" and "packages" are fairly interchangable.
 
 ### Block
 
@@ -338,7 +338,7 @@ be used; one example is shown below.
 * Mixins should be prefixed with their module namespace: `@mixin grid-builder()`
 * Mixins should not be not longer than ~50 lines
 * Private mixins that are not used outside of the current file should be prefixed with an underscore: `@mixin _grid-helper`
-* Avoid using more than 4 parameters. It is a sign that a mixin is too complex. Perhaps passing a list instead might be the best option here.
+* Avoid using more than 4 parameters. It is a sign that a mixin is too complex. Pass a list instead.
 * Mixins should be documented using Sass-flavoured DocBlock.
 
 ```scss
