@@ -221,21 +221,21 @@ Formatting of selectors is important and is the key to making code easy to share
 .selector-1,
 .selector-2,
 .selector-3[type="text"] {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
 
-font-family: helvetica, arial, sans-serif;
+    font-family: helvetica, arial, sans-serif;
 
-color: #333;
-background: #fff;
-background: linear-gradient(#fff, rgba(0, 0, 0, 0.8));
+    color: #333;
+    background: #fff;
+    background: linear-gradient(#fff, rgba(0, 0, 0, 0.8));
 }
 
 .selector-a,
 .selector-b {
-padding: 10px;
+    padding: 10px;
 }
 ```
 
@@ -258,16 +258,16 @@ Cluster related properties (e.g. positioning and box-model) together.
 
 ```scss
 .selector {
-$bg: blue;
-$fallback: green;
+    $bg: blue;
+    $fallback: green;
 
-@extend .clearfix;
-@include border-box;
+    @extend .clearfix;
+    @include border-box;
 
-height: 200px;
-width: 200px;
+    height: 200px;
+    width: 200px;
 
-text-decoration: none;
+    text-decoration: none;
 
     @include after {
         position: absolute;
@@ -284,7 +284,7 @@ text-decoration: none;
     @include respond-to('large and above') {
         background: yellow;
     }
-    
+
     .selector__child {
         display: none;
     }
@@ -352,16 +352,16 @@ be used; one example is shown below.
 // @param {Boolean} $layout Include layout classes?
 // @api private
 @mixin breakpoints($breakpoints, $spacing: true, $visibility: true, $layout: true) {
-@each $columns in $breakpoints {
-    @if index($breakpoints, $columns) == 1 {
-        @include _breakpoint-classes($columns, $spacing, $visibility, $layout);
-    }
-    @else {
-        @include grid-from($columns) {
+    @each $columns in $breakpoints {
+        @if index($breakpoints, $columns) == 1 {
             @include _breakpoint-classes($columns, $spacing, $visibility, $layout);
         }
+        @else {
+            @include grid-from($columns) {
+                @include _breakpoint-classes($columns, $spacing, $visibility, $layout);
+            }
+        }
     }
-}
 }
 ```
 
