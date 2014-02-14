@@ -7,7 +7,8 @@
     - [Exceptions and slight deviations](#exceptions-and-slight-deviations)
 - [4. Attribute order](#4-attribute-order)
 - [5. Naming](#5-naming)
-- [6. Practical example](#6-practical-example)
+- [6. Commenting](#5-commenting)
+- [7. Practical example](#6-practical-example)
 - [License](#license)
 
 # Principles of writing consistent, idiomatic HTML
@@ -25,8 +26,7 @@ The following document outlines an opinionated reasonable style guide for HTML d
 Only one style should exist across the entire source of your code-base. Always be consistent in your use of whitespace. Use whitespace to improve readability.
 
 * _Never_ mix spaces and tabs for indentation.
-* Use only soft indents (spaces). Stick to this without fail. (Ideally enforce
-with a precomit hook)
+* Use only soft indents (spaces). Stick to this without fail. (Ideally enforce with a precomit hook)
 * Use 4 space characters used per indentation level.
 
 Tip: configure your editor to "show invisibles" or to automatically remove end-of-line whitespace.
@@ -37,13 +37,12 @@ Tip: use an [EditorConfig](http://editorconfig.org/) file (or equivalent) to hel
 ## 3. Format
 
 * Always use lowercase tag and attribute names.
-* Write one discrete element per line.
+* Write one discrete block level element per line.
+* Two or more natural inline elements may be placed on the same line, but only where it does not reduce readability.
 * Use one additional level of indentation for each nested element.
-* Use valueless boolean attributes (e.g. `checked` rather than
-  `checked="checked"`).
+* Use valueless boolean attributes (e.g. `checked` rather than `checked="checked"`).
 * Always use double quotes to quote attribute values.
-* Omit the `type` attributes from `link` stylesheet, `style` and `script`
-  elements.
+* Omit the `type` attributes from `link` stylesheet, `style` and `script` elements.
 * Always include closing tags.
 * Always include a trailing slash in self-closing elements (eg `<hr/>` not `<hr>`).
 * Keep line-length to a sensible maximum, e.g., 80 columns.
@@ -131,6 +130,29 @@ Example with better names:
     background: #000;
 }
 ```
+
+## 6. Commenting
+
+* In general, HTML comments should be avoided as they lead to output bloat.
+* Never use HTML comments to 'disable' a block of html from rendering, except perhaps when debugging.
+* Where it adds clarity to your code, consider using trailing closing tag comments to indicate which element is being closed, as in this example:
+
+```html
+<div class="grid">
+    <div class="grid__column grid__column--3">
+
+        <!-- content-->
+
+    </div><!--//.grid__column-->
+    <div class="grid__column grid__column--9">
+        <!-- some more content -->
+
+    </div><!--//.grid__column-->
+</div><!--//.grid-->
+```
+
+Consider stripping comments as part of your build step.
+
 
 ## 6. Practical example
 
