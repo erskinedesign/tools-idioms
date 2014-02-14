@@ -102,7 +102,7 @@ Writing good Sass code starts with correctly dividing and modularizing your obje
 * Objects should never manipulate other objects. eg. `.message` would never change the style of a nested object called `.list`. Instead use child selectors like
 `.message__list` and use both classes in the markup  `<div class="list message__list">` or use a modifier `<div class="message"><div class="list list--small"></div></div>`
 * Never, ever use location-based styling. This means a block is never styled different because it is within another block. Objects should have "modifiers" instead of location-related styles `.block--large {}` instead of `#sidebar  block {}`
-* Separate layout from style. This means an object that handles background and border won't control padding and margin. Styles generally fall into a couple of categories: layout, texture, typography. Each object should generally only handle of these. But be pragmatic about it and consider reusablity at all times.
+* Separate layout from style. This means an object that handles background and border won't control padding and margin. Styles generally fall into a couple of categories: layout, texture, typography. Each object should generally only handle of these. But be pragmatic about it and consider reusability at all times.
 
 ## 5. Selector performance
 
@@ -113,18 +113,17 @@ selector eg `.block__element a` as this can confer too much specificity. Conside
 seem extreme it is easy to enforce and will save you pain in the long run.
 * Similarly **never** use `name` values or aria role attributes for styling.
 * Remember that CSS selectors are evaluated from right -> left;
-* Educate yourself about selector performance: it's part of your job
-* No really, **never** use IDs
+* Educate yourself about [selector performance](http://css-tricks.com/efficiently-rendering-css/).
 
 Enforce these rules by using one of the naming conventions in the next section.
 
-In general the principle is that:
+In general, the principle is that:
 
 - Classes are for styling.
 - Name values are for the server.
 - Aria roles are for accessibility
 - Data attributes are for JavaScript (or icons).
-- IDs are for losers.
+- Never use IDs.
 
 
 ## 6. BEM (Naming Convention)
@@ -271,23 +270,25 @@ width: 200px;
 
 text-decoration: none;
 
-@include after {
-    position: absolute;
-}
+    @include after {
+        position: absolute;
+    }
 
-&.selector--modifier {
-    background: red;
-}
+    &.selector--modifier {
+        background: red;
+    }
 
-@include respond-to('medium and above') {
-    background: green;
-}
-@include respond-to('large and above') {
-    background: yellow;
-}
-.selector__child {
-    display: none;
-}
+    @include respond-to('medium and above') {
+        background: green;
+    }
+
+    @include respond-to('large and above') {
+        background: yellow;
+    }
+    
+    .selector__child {
+        display: none;
+    }
 }
 ```
 
@@ -335,12 +336,11 @@ be used; one example is shown below.
 
 ## 12. Mixins
 
-
 * Mixins should be prefixed with their module namespace: `@mixin grid-builder()`
 * Mixins should not be not longer than ~50 lines
 * Private mixins that are not used outside of the current file should be prefixed with an underscore: `@mixin _grid-helper`
-* Avoid using more than 4 parameters. It is a sign that a mixin is too complex.Pass a list instead
-* Mixins should be documented using Sass-flavoured DocBlock
+* Avoid using more than 4 parameters. It is a sign that a mixin is too complex. Perhaps passing a list instead might be the best option here.
+* Mixins should be documented using Sass-flavoured DocBlock.
 
 ```scss
 // Loop through each breakpoint and build
@@ -390,6 +390,7 @@ An example of various conventions.
 * </div>
 */
 ```
+
 
 
 
