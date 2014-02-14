@@ -1,4 +1,3 @@
-
 # Principles of writing consistent, idiomatic Sass
 
 - [1. Acknowledgements](#1-acknowledgements)
@@ -30,7 +29,7 @@ The following document outlines an opinionated but reasonable style guide for SC
 
 While many people think of Sass as 'just CSS' there are many unique challenges that need to be addressed if we want to be able to write the best possible code.
 
-The role of this document is to share a coding style that will help you share code with others and avoid a common pitfalls.
+The role of this document is to share a coding style that will help you share code with others and avoid common pitfalls.
 
 > "Arguments over style are pointless. There should be a style guide, and you should follow it"
 
