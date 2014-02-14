@@ -107,7 +107,7 @@ Writing good Sass code starts with correctly dividing and modularizing your obje
 
 * Use classes for the bulk of your selectors (see [BEM](#BEM) below)
 * Use care when nesting unqualified element selectors inside a Block or Element
-selector eg `.block__element a` as this can confer too much specificity. Consider adding a class to the element `.block__element-link` instead, or using an immediate child selector to reduce the depth of applicability `.block__element < a`
+selector eg `.block__element a` as this can confer too much specificity. Consider adding a class to the element `.block__element-link` instead, or using an immediate child selector to reduce the depth of applicability `.block__element > a`
 * **Never** use IDs for styling: they carry to much specificity. While this may
 seem extreme it is easy to enforce and will save you pain in the long run.
 * Similarly **never** use `name` values or aria role attributes for styling.
