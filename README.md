@@ -114,7 +114,7 @@ seem extreme it is easy to enforce and will save you pain in the long run.
 * Remember that CSS selectors are evaluated from right -> left;
 * Educate yourself about [selector performance](http://css-tricks.com/efficiently-rendering-css/).
 
-Enforce these rules by using one of the naming conventions in the next section.
+Enforce these rules by using the naming convention in the next section.
 
 In general, the principle is that:
 
