@@ -145,7 +145,8 @@ Example with better names:
 
     </div><!--//.grid__column-->
     <div class="grid__column grid__column--9">
-        <!-- some more content -->
+
+        <!-- more content -->
 
     </div><!--//.grid__column-->
 </div><!--//.grid-->
@@ -184,13 +185,13 @@ An example of various conventions.
                 </li>
             </ul>
 
-            <a class="link-complex" href="[url]">
-                <span class="link-complex__target">[text]</span>
+            <a class="link link--complex" href="[url]">
+                <span class="link__target">[text]</span>
                 [text]
-            </a>
+            </a><!--//.link-->
 
             <input value="text" readonly>
-        </article>
+        </article><!--//.post-->
     </body>
 </html>
 ```
